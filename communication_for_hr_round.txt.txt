@@ -1,0 +1,193 @@
+A. HR ROUND :-
+
+HR CALL:
+        My introduction:
+            "Hi, my name is Vikas Deshmukh, and I am from Amravati. I graduated with a degree in Civil Engineering from SGBAU. 
+            Currently, I work at Novelti Solutions Pvt. Ltd as a Full Stack Developer. I have been with the company for 1.5 years, 
+            and during this time, I've been primarily working with technologies like React, Next.js, TypeScript, and Node.js. 
+            I specialize in full-stack development with a focus on MERN stack."
+
+HR CAN ASK FOLLOWING QUESTIONS
+        Company Name :
+        Company Adddress :
+        Nearby Location/ Landmark:
+        HR Email ID
+        HR Mobile Number
+        Collegue Name and Mobile
+        TL and Email
+        Project Manager and Email
+        Founder and CEO
+        SCope Company—
+        How many Employee — 50-70
+        Mode —
+        Company Base:
+        Notice Period: 1 month
+        Negotiable Notice Period:  i want to talk with my manager but its about 15 days
+        Team size - 
+        salary:(individuals)
+            current ctc -- in lakhs
+            in hand salary -- in thousands (tell the around amount like around 30000)
+            Expected salary
+            Negotiable salary
+        Experiance
+        Documents:
+            PF
+            Bank Statement
+            Form 16
+            Counter Offer
+        Employement: permenant
+
+HR NON TECH QUESTIONS
+        1. WHY ARE U LOOKING FOR CHANGE ?
+        2. TELL ME ABOUT THE GAP IN YOUR RESUME ?
+        3. HOW WOULD U RATE YOURSELF ON A SCALE OF 1 TO 0 ?(always rate between 7 to 8)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EMAIL WRITING
+
+
+
+1. COVER LETTER :-
+
+    Vikas Deshmukh
+    vikasdeshmukh63@gmail.com
+    7972131927
+    [Date]
+
+    Dear [Hiring Manager's Name],
+
+        I am writing to express my interest in the Full Stack Developer position at [Company Name]. 
+    With 1.5 years of experience in developing full-stack applications using the MERN stack, 
+    I have a strong understanding of both front-end and back-end technologies, including React,
+    Next.js, TypeScript, Node.js, and MongoDB. My experience in building responsive, scalable 
+    applications has allowed me to contribute effectively to projects and collaborate seamlessly 
+    with cross-functional teams.
+
+        At [Current Company Name], I have developed web applications, optimized performance, 
+    and ensured high-quality code through continuous integration and testing. I am eager to 
+    bring my skills, problem-solving abilities, and passion for technology to [Company Name] 
+    and contribute to your team's success.
+
+    Thank you for considering my application. I look forward to the opportunity to discuss 
+    how my background and skills align with your needs.
+
+    Technology - MERN
+    Total Experience - 3.5 years
+    Relevant Experience - 3.5 years
+    Current CTC -
+    Expected CTC - 
+    Notice Period - 1 Month
+
+    Sincerely,
+    Vikas Deshmukh
+    Full Stack Developer
+
+
+2. EMAIL SUBJECT:-
+    Subject : Full Stack Developer | MERN | 3.5 Years | Javascript | Nodejs | React
+
+============================================================================================================================================================================================================
+
+B. MANAGERS ROUND (BEHAVIOUR ROUND):-
+
+    1. Tell me about yourself ? (ans should be brief)
+            "Hi, I’m Vikas Deshmukh, and I’m a full-stack developer with 1.5 years of experience specializing in the MERN stack. 
+            I graduated with [Your Degree] from [University Name]. I currently work at [Current Company Name], where I develop scalable,
+            responsive web applications using React, Next.js, TypeScript, and Node.js.In my current role, I handle both front-end and 
+            back-end development, collaborating with cross-functional teams to deliver high-quality solutions. I have a strong problem-solving 
+            mindset and focus on writing clean, efficient code. I’m always eager to learn new technologies and improve my skills, and I believe 
+            my background in full-stack development and passion for building robust applications would allow me to contribute effectively to your team."
+
+    2. Explain your project ? (explain the workflow of project)
+
+    3. Roles and responsibilities ?
+
+    4. Day to day work ?
+
+    5. Tell me somethign about your current company ?
+
+    6. Why are u looking for change ? (give a sensible reason)
+            "I am looking for a change because I believe it’s time for me to take on new challenges and expand my skill set. While I have gained valuable
+            experience in my current role, particularly in full-stack development with technologies like React, Next.js, and Node.js, I am eager to work 
+            in a dynamic environment where I can contribute to more complex projects and collaborate with a diverse team. I’m excited about the opportunity 
+            to bring my skills to [Company Name], and I believe the growth potential and innovative work at your company align well with my career aspirations."
+
+    7. What challanges are u faced while doing this project  and how u fixed it ?
+            "One challenge I faced in this project was optimizing the performance of the application when dealing with large datasets. The front-end had to render
+            real-time data efficiently without affecting user experience. I implemented lazy loading and pagination on the front-end with React, while optimizing 
+            API calls on the back-end using Node.js to ensure faster data retrieval. This helped maintain a smooth, responsive UI even with large volumes of data, 
+            and I learned the importance of performance tuning at both ends."
+
+    8. Describe a challanging technical problem u have faced recently ?
+            "Recently, I faced a challenging technical problem when integrating third-party APIs into a project. The APIs had inconsistent data formats and occasional
+            latency issues, which impacted the user experience. To address this, I implemented a robust error-handling system and introduced data normalization processes
+            on the back-end using Node.js. Additionally, I added caching mechanisms to reduce API calls and improve response times. This solution improved both the reliability
+            and performance of the application."
+
+    9. is there any client interaction ?
+            only when there are any blockers or after completing a sprint while demo
+
+    10. Explain latest issue that you discussed with client ?
+            "Recently, I worked with the client to address integration challenges between the three portals in our application. The issue was ensuring smooth data 
+            synchronization between the AI interview portal, recruiter portal, and candidate portal, especially when candidates’ data like resumes and video verifications 
+            had to reflect accurately during interviews. I optimized the backend API for efficient data handling and improved the front-end interface for better user experience. 
+            The client was satisfied with the solution, and we’re now in the final stages of testing."
+
+    11. who is your client ?
+            cant disclose the name its confidential
+
+    12. Scrum call meeting timing ?
+
+    13. dicussion in meeting ?
+
+    14. scrum roles and scrum ceremonies ?
+
+    15. how to manage/track project ?
+    
+    16. How u integrate or maintain project ? 
+            Git,github
+
+    17. Technical things
+            which language
+            which framework
+            third party technologies etc...
+
+    18. Explain CICD ?
+
+    19. Explain your project workflow ?
+    
+    20. Who is the enduser ?
+
+    21. how oauth 2.0 works 
+     
+   +--------+                               +------------------+
+   |        |--(A)- Authorization Request ->|   Authorization  |
+   |        |                               |     Server       |
+   |        |<-(B)-- Authorization Grant ---|                  |
+   |        |                               +------------------+
+   |        |                                        |
+   |        |                                        | (C)
+   |        |                               +------------------+
+   | Client |--(D)-- Access Token Request ->|    Token         |
+   |        |                               |    Endpoint      |
+   |        |<-(E)-- Access Token ----------|                  |
+   +--------+                               +------------------+
+        |                                            |
+        |                                            | (F)
+        |                                            |
+        |                                    +------------------+
+        |                                    | Resource Server  |
+        |                                    |                  |
+        |                                    +------------------+
+        |                                            |
+        |                                            |
+        +--------------------------------------------+
+
+Steps in the Flow:
+(A): The client sends the user to the authorization server to request access.
+(B): The authorization server sends an authorization code back to the client.
+(C): The client sends the authorization code to the token endpoint.
+(D): The token endpoint responds with an access token.
+(E): The client uses the access token to request resources from the resource server.
+(F): The resource server responds with the requested resources.

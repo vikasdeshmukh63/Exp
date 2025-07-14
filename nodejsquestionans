@@ -1,0 +1,79 @@
+# Node.js Interview Questions and Answers
+
+## Basic Node.js Questions
+
+### 1. What is Node.js?
+Node.js is a JavaScript runtime built on Chrome's V8 engine that allows JavaScript to run outside the browser. It is commonly used for building scalable network applications.
+
+### 2. What are the key features of Node.js?
+- **Asynchronous & Non-blocking**: Uses event-driven architecture.  
+- **Single-threaded**: Uses a single thread with event looping.  
+- **Fast Execution**: Powered by the V8 engine.  
+- **NPM (Node Package Manager)**: Manages dependencies.  
+- **Cross-platform**: Runs on Windows, Linux, and macOS.  
+
+### 3. What is the difference between `require` and `import`?
+- **`require`**: CommonJS module system (used in Node.js).  
+- **`import`**: ES6 module system (used in modern JavaScript).  
+
+### 4. What is the Event Loop in Node.js?
+The Event Loop is the core of Node.js that handles asynchronous operations using callbacks, promises, and async/await without blocking the main thread.
+
+### 5. What are Streams in Node.js?
+Streams are objects that allow reading or writing data continuously, making them efficient for handling large files.  
+Types:
+- **Readable Streams** (e.g., `fs.createReadStream()`)  
+- **Writable Streams** (e.g., `fs.createWriteStream()`)  
+- **Duplex Streams** (both readable & writable)  
+- **Transform Streams** (modifies data as it passes through)  
+
+## Advanced Node.js Questions
+
+### 6. What is middleware in Express.js?
+Middleware functions in Express.js process requests before sending a response. Example:
+```js
+app.use((req, res, next) => {
+  console.log('Middleware executed');
+  next();
+});
+```
+
+### 7. How do you handle errors in Node.js?
+Using `try...catch` for synchronous code and `.catch()` or `async/await` for asynchronous code.
+```js
+async function fetchData() {
+  try {
+    const data = await fetchFromDB();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+```
+
+### 8. What is the difference between process.nextTick() and setImmediate()?
+- **`process.nextTick()`**: Executes after the current operation, before the event loop continues.  
+- **`setImmediate()`**: Executes in the next event loop cycle.
+
+### 9. How does clustering work in Node.js?
+Node.js runs on a single thread but can use multiple processes via the **cluster** module to utilize multiple CPU cores.
+```js
+const cluster = require('cluster');
+const http = require('http');
+const os = require('os');
+
+if (cluster.isMaster) {
+  os.cpus().forEach(() => cluster.fork());
+} else {
+  http.createServer((req, res) => res.end('Hello World')).listen(3000);
+}
+```
+
+### 10. What is the difference between `process.env` and `.env` files?
+- **`process.env`**: Global object storing environment variables.  
+- **`.env` file**: Stores environment variables externally, loaded using libraries like `dotenv`.
+
+```js
+require('dotenv').config();
+console.log(process.env.API_KEY);
+```

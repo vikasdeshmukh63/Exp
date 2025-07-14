@@ -1,0 +1,561 @@
+
+
+### JavaScript Interview Questions and Answers (Part 1)
+
+---
+
+#### **1. What are the possible ways to create objects in JavaScript?**
+- **Object Literal:** 
+  ```javascript
+  const obj = { key: "value" };
+  ```
+- **Object Constructor:** 
+  ```javascript
+  const obj = new Object();
+  obj.key = "value";
+  ```
+- **Object.create():** 
+  ```javascript
+  const proto = { key: "value" };
+  const obj = Object.create(proto);
+  ```
+- **Class:** 
+  ```javascript
+  class MyClass {
+    constructor() {
+      this.key = "value";
+    }
+  }
+  const obj = new MyClass();
+  ```
+- **Function Constructor:** 
+  ```javascript
+  function MyConstructor() {
+    this.key = "value";
+  }
+  const obj = new MyConstructor();
+  ```
+
+---
+
+#### **2. What is a prototype chain?**
+The prototype chain is a hierarchy of objects used to enable inheritance in JavaScript. When accessing a property or method, the interpreter checks the object and then traverses up the prototype chain until it finds the desired property/method or reaches `null`.
+
+---
+
+#### **3. What is a prototype?**
+A prototype is an object from which other objects inherit properties and methods. Every JavaScript function has a `prototype` property that is used to attach methods and properties shared by instances created by the constructor function.
+
+---
+
+#### **4. What is JSON, and what are its common operations?**
+JSON (JavaScript Object Notation) is a lightweight data-interchange format.
+- **Common Operations:**
+  - `JSON.stringify(obj)`: Converts a JavaScript object to a JSON string.
+  - `JSON.parse(jsonString)`: Converts a JSON string back to a JavaScript object.
+
+---
+
+#### **5. What is the purpose of the `array.slice()` method?**
+The `slice()` method returns a shallow copy of a portion of an array without modifying the original array.
+
+**Example:**
+```javascript
+const arr = [1, 2, 3, 4];
+const sliced = arr.slice(1, 3); // [2, 3]
+```
+
+---
+
+#### **6. What is the purpose of the `array.splice()` method?**
+The `splice()` method adds or removes elements from an array, modifying the original array.
+
+**Example:**
+```javascript
+const arr = [1, 2, 3, 4];
+arr.splice(1, 2, "a", "b"); // arr: [1, "a", "b", 4]
+```
+
+---
+
+#### **7. What is the difference between `slice` and `splice`?**
+| Feature         | `slice`                     | `splice`                        |
+|-----------------|-----------------------------|----------------------------------|
+| Purpose         | Returns a portion of an array | Adds or removes elements in place |
+| Modifies Original | No                         | Yes                              |
+| Return Value    | New array                  | Removed elements as an array     |
+
+---
+
+#### **8. How do you compare `Object` and `Map`?**
+| Feature         | `Object`                | `Map`                     |
+|-----------------|-------------------------|---------------------------|
+| Key Types       | Strings or symbols only | Any data type             |
+| Iteration       | Requires manual methods | Direct iteration support  |
+| Order of Keys   | Not guaranteed          | Preserves insertion order |
+| Performance     | Slower for frequent updates | Faster for frequent updates |
+
+---
+
+#### **9. What is the difference between `==` and `===` operators?**
+- `==` checks for equality after type coercion.
+- `===` checks for strict equality (no type coercion).
+
+**Example:**
+```javascript
+5 == "5";  // true
+5 === "5"; // false
+```
+
+---
+
+#### **10. What are lambda expressions or arrow functions?**
+Arrow functions are concise syntax for writing functions introduced in ES6. They do not bind their own `this`.
+
+**Example:**
+```javascript
+const add = (a, b) => a + b;
+```
+
+---
+
+#### **11. What is a first-class function?**
+A first-class function can be treated as a variable, meaning it can be passed as an argument, returned from a function, and assigned to a variable.
+
+**Example:**
+```javascript
+const greet = () => console.log("Hello");
+const execute = (fn) => fn();
+execute(greet); // "Hello"
+```
+
+---
+
+#### **12. What is a higher-order function?**
+A higher-order function takes another function as an argument or returns a function as its result.
+
+**Example:**
+```javascript
+const map = (arr, fn) => arr.map(fn);
+```
+
+---
+
+#### **13. What is a unary function?**
+A unary function is a function that takes exactly one argument.
+
+**Example:**
+```javascript
+const square = (x) => x * x;
+```
+
+---
+
+#### **14. What is a curried function?**
+A curried function transforms a function with multiple arguments into a sequence of functions, each taking one argument.
+
+**Example:**
+```javascript
+const add = (a) => (b) => a + b;
+add(2)(3); // 5
+```
+
+---
+
+#### **15. What is a pure function?**
+A pure function always produces the same output for the same input and has no side effects.
+
+**Example:**
+```javascript
+const add = (a, b) => a + b;
+```
+
+---
+---
+
+#### **16. What is the purpose of the `let` keyword?**
+`let` is used to declare variables with block scope, making them inaccessible outside their defining block.
+
+**Example:**
+```javascript
+if (true) {
+  let x = 10;
+}
+console.log(x); // ReferenceError
+```
+
+---
+
+#### **17. What is the difference between `let` and `var`?**
+| Feature          | `let`                        | `var`                       |
+|------------------|------------------------------|-----------------------------|
+| Scope            | Block-scoped                | Function-scoped            |
+| Hoisting         | Not initialized until block | Hoisted and initialized as `undefined` |
+| Redeclaration    | Not allowed in the same scope | Allowed                   |
+
+---
+
+#### **18. What is the Temporal Dead Zone?**
+The Temporal Dead Zone (TDZ) is the time between entering a block where a variable is declared with `let` or `const` and its initialization, during which accessing it results in a `ReferenceError`.
+
+**Example:**
+```javascript
+console.log(x); // ReferenceError
+let x = 5;
+```
+
+---
+
+#### **19. What is an IIFE (Immediately Invoked Function Expression)?**
+An IIFE is a function that runs immediately after it is defined, commonly used to create a private scope.
+
+**Example:**
+```javascript
+(function () {
+  console.log("IIFE executed");
+})();
+```
+
+---
+
+#### **20. What is memoization?**
+Memoization is an optimization technique where function results are cached to avoid recomputing them for the same inputs.
+
+**Example:**
+```javascript
+const memoize = (fn) => {
+  const cache = {};
+  return (arg) => {
+    if (cache[arg]) return cache[arg];
+    cache[arg] = fn(arg);
+    return cache[arg];
+  };
+};
+```
+
+---
+
+#### **21. What is hoisting?**
+Hoisting refers to JavaScript's behavior of moving declarations to the top of their scope.
+
+**Example:**
+```javascript
+console.log(x); // undefined
+var x = 5;
+```
+
+---
+
+#### **22. What are closures?**
+A closure is a function that retains access to its outer scope, even after the outer function has executed.
+
+**Example:**
+```javascript
+function outer() {
+  let count = 0;
+  return function () {
+    count++;
+    return count;
+  };
+}
+const increment = outer();
+console.log(increment()); // 1
+console.log(increment()); // 2
+```
+
+---
+
+#### **23. What are ES6 classes?**
+ES6 classes are syntactical sugar over JavaScript's prototype-based inheritance for defining object constructors and methods.
+
+**Example:**
+```javascript
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    console.log(`Hello, ${this.name}`);
+  }
+}
+```
+
+---
+
+#### **24. What are modules, and why do you need them?**
+Modules are reusable pieces of code that can be exported and imported between files. They help maintain a clean and organized codebase.
+
+**Example:**
+```javascript
+// math.js
+export const add = (a, b) => a + b;
+
+// app.js
+import { add } from "./math.js";
+console.log(add(2, 3));
+```
+
+---
+
+#### **25. What is scope in JavaScript?**
+Scope determines the accessibility of variables, functions, and objects in parts of the code. Types include:
+- **Global Scope**
+- **Function Scope**
+- **Block Scope**
+
+---
+
+#### **26. What is a service worker?**
+A service worker is a script that runs in the background, enabling features like offline capabilities, caching, and push notifications.
+
+**Example:**
+```javascript
+navigator.serviceWorker.register("/sw.js").then(() => {
+  console.log("Service Worker Registered");
+});
+```
+
+---
+
+#### **27. What is IndexedDB?**
+IndexedDB is a low-level API for storing significant amounts of structured data, including files and blobs, in the browser.
+
+**Example:**
+```javascript
+const request = indexedDB.open("MyDatabase", 1);
+request.onsuccess = (event) => {
+  const db = event.target.result;
+};
+```
+
+---
+
+#### **28. What is web storage?**
+Web storage provides mechanisms for storing key-value pairs in the browser, with two types:
+- **localStorage:** Persistent storage.
+- **sessionStorage:** Temporary storage for the session.
+
+---
+
+#### **29. What are the differences between cookies, localStorage, and sessionStorage?**
+| Feature           | Cookies                     | localStorage             | sessionStorage          |
+|-------------------|-----------------------------|--------------------------|-------------------------|
+| Storage Capacity  | ~4 KB                       | ~5 MB                    | ~5 MB                   |
+| Expiry            | Manually set               | Persistent               | Cleared on tab close    |
+| HTTP Request      | Sent with every request    | Not sent                 | Not sent                |
+
+---
+
+#### **30. How do you access web storage?**
+- **localStorage:**
+  ```javascript
+  localStorage.setItem("key", "value");
+  const value = localStorage.getItem("key");
+  ```
+- **sessionStorage:**
+  ```javascript
+  sessionStorage.setItem("key", "value");
+  const value = sessionStorage.getItem("key");
+  ```
+
+---
+---
+
+#### **31. What is a promise?**
+A promise is an object representing the eventual completion or failure of an asynchronous operation.
+
+---
+
+#### **32. What are the three states of a promise?**
+1. **Pending:** Initial state, neither resolved nor rejected.
+2. **Fulfilled:** Operation completed successfully.
+3. **Rejected:** Operation failed.
+
+---
+
+#### **33. What is promise chaining?**
+Promise chaining allows you to perform multiple asynchronous operations in sequence.
+
+**Example:**
+```javascript
+fetch('api/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+
+---
+
+#### **34. What is `Promise.all`?**
+`Promise.all` executes multiple promises in parallel and resolves when all promises are fulfilled or rejects when any promise fails.
+
+**Example:**
+```javascript
+Promise.all([promise1, promise2]).then(results => console.log(results));
+```
+
+---
+
+#### **35. Purpose of `Promise.race`:**
+`Promise.race` returns the result of the first resolved or rejected promise.
+
+**Example:**
+```javascript
+Promise.race([promise1, promise2]).then(result => console.log(result));
+```
+
+---
+
+#### **36. What is strict mode in JavaScript?**
+Strict mode enforces a stricter set of rules to catch common coding mistakes and improve performance.
+
+**Enabling Strict Mode:**
+```javascript
+'use strict';
+```
+
+---
+
+#### **37. Why do you need strict mode?**
+- Prevents the use of undeclared variables.
+- Eliminates silent errors.
+- Disables some problematic features.
+
+---
+
+#### **38. What is the purpose of the `delete` operator?**
+The `delete` operator removes properties from an object.
+
+**Example:**
+```javascript
+const obj = { name: 'John' };
+delete obj.name;
+console.log(obj); // {}
+```
+
+---
+
+#### **39. What is the `typeof` operator?**
+`typeof` determines the data type of a variable.
+
+**Example:**
+```javascript
+console.log(typeof 42); // "number"
+```
+
+---
+
+#### **40. Differences between `null` and `undefined`:**
+| Feature    | `null`            | `undefined`        |
+|------------|-------------------|--------------------|
+| Definition | Intentional absence| Variable not assigned|
+| Type       | Object            | Undefined          |
+
+---
+
+#### **41. Differences between `window` and `document`:**
+| Feature          | `window`                     | `document`                 |
+|------------------|------------------------------|----------------------------|
+| Definition       | Global browser object        | DOM tree representing HTML |
+| Methods          | `alert()`, `setTimeout()`    | `getElementById()`         |
+
+---
+
+#### **42. Differences between `load` and `DOMContentLoaded` events:**
+- **`DOMContentLoaded`:** Triggered when the DOM is fully parsed.
+- **`load`:** Triggered when all resources (images, styles) are fully loaded.
+
+---
+
+#### **43. What is event bubbling?**
+Event bubbling occurs when an event propagates from the target element to its ancestors.
+
+---
+
+#### **44. What is event capturing?**
+Event capturing occurs when an event propagates from the ancestors to the target element.
+
+---
+---
+
+#### **45. How do you submit a form using JavaScript?**
+You can submit a form programmatically using the `submit()` method.
+
+**Example:**
+```javascript
+const form = document.getElementById('myForm');
+form.submit();
+```
+
+---
+
+#### **46. What is the same-origin policy?**
+The same-origin policy is a security feature that restricts web pages from making requests to a domain different from the one serving the web page.
+
+**Example:**
+- Origin: `https://example.com`
+- Cross-origin: `https://another-domain.com`
+
+---
+
+#### **47. Differences between native, host, and user objects:**
+| Feature      | Native Objects        | Host Objects             | User Objects             |
+|--------------|-----------------------|--------------------------|--------------------------|
+| Definition   | Built-in JavaScript objects | Objects provided by the environment (browser/Node.js) | Objects created by the user |
+| Examples     | `Array`, `Object`    | `window`, `document`     | Custom user-created objects |
+
+---
+
+#### **48. Tools or techniques used for debugging JavaScript code:**
+1. **Browser Developer Tools:** Console, Debugger, Network tab.
+2. **Debugging in IDEs:** Breakpoints in VS Code.
+3. **Logging:** Using `console.log()` for quick inspection.
+4. **Linting Tools:** ESLint for catching syntax errors.
+
+---
+
+#### **49. Is JavaScript a case-sensitive language?**
+Yes, JavaScript is case-sensitive. For example, `myVariable` and `myvariable` are treated as different identifiers.
+
+---
+
+#### **50. What are events in JavaScript?**
+Events are actions or occurrences that happen in the browser, such as clicks, key presses, or page loads. JavaScript allows you to attach handlers to respond to these events.
+
+**Example:**
+```javascript
+document.getElementById('btn').addEventListener('click', () => {
+  alert('Button clicked!');
+});
+```
+
+---
+
+#### **51. What is the difference between `call`, `apply`, and `bind`?**
+| Feature      | `call`                       | `apply`                      | `bind`                       |
+|--------------|------------------------------|------------------------------|------------------------------|
+| Purpose      | Calls a function with a specified `this` context and arguments | Same as `call`, but arguments are passed as an array | Creates a new function with bound `this` and arguments |
+| Syntax       | `func.call(thisArg, arg1, arg2)` | `func.apply(thisArg, [arg1, arg2])` | `func.bind(thisArg, arg1, arg2)` |
+
+---
+
+#### **Practical Example for `call`, `apply`, and `bind`:**
+```javascript
+function greet(greeting, punctuation) {
+  console.log(`${greeting}, ${this.name}${punctuation}`);
+}
+
+const person = { name: 'John' };
+
+// Using call
+greet.call(person, 'Hello', '!');
+
+// Using apply
+greet.apply(person, ['Hi', '?']);
+
+// Using bind
+const greetJohn = greet.bind(person, 'Hey');
+greetJohn('.');
+```
+
+---

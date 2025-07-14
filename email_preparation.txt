@@ -1,0 +1,15 @@
+EMAIL PREPARATION
+
+resume name-
+    yourname_profile/post_yearofexp
+    vikas_fullstackdeveloper_3.5.pdf
+
+subject:application for the Full stack Developer(3.5 year experience)
+body:
+    name:
+    current company:
+    current profile:
+    curent ctc:(only if they ask then mention otherwise optional)
+    expected ctc: 40% more than the current ctc (only if they ask then mention otherwise optional)
+    notice period: 1month
+    attatch resume

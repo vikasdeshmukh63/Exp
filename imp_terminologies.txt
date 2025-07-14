@@ -1,0 +1,23 @@
+Definition of MVC Architecture:
+MVC (Model-View-Controller) is a software design pattern used to separate an application's logic into three interconnected components:
+
+Model: Manages the data, business logic, and rules of the application.
+View: Handles the user interface (UI) and displays data to the user.
+Controller: Acts as a bridge between the Model and the View, handling user input and updating the Model or View accordingly.
+This separation of concerns improves code organization, scalability, and maintainability, making it easier to develop and modify applications.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Key Differences between singletone and mvc design
+
+Scope:
+MVC is a complete architectural pattern for organizing the structure of an application.
+Singleton is a design pattern focused on ensuring a class has a single instance throughout the application.
+
+Purpose:
+MVC focuses on organizing the components of an application into clear roles (data, UI, and logic).
+Singleton focuses on ensuring a class is instantiated only once and managing access to that instance.
+
+In short, they are separate design patterns used for different purposes. MVC helps structure an app, while Singleton ensures only one instance of a specific class exists.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

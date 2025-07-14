@@ -1,0 +1,58 @@
+RESUME FORMAT
+
+your_name (M.E.)
+post/designation
+company_name
+your email
+contact_no
+
+Objective(optional) - 2-3 lines
+
+Professional summary-
+    currently i have 3.5 years of exp as full stack developer.
+    currenlty i am working with novelti soultions.
+    expertise in technologies...
+    Experiance in developing various web based applications
+    involve in developing web app based on MERN stack
+    handsone experience in API development
+    worked on the agile scrum methodology
+    git and github
+
+Professional Experiance-
+    comapnay name:
+    profile/role:
+    duration:
+
+Education-
+    (dont mention year of passing)
+    (dont mention University name and college name)
+    B.E. Civil
+    (dont mention birth date)
+
+Technical Skills-
+    language:Javascript
+    web technologies: HMTL/css/js/
+    development framework - next js/remix/
+    API tools:
+    database:
+    prject management tool:jira/agile-scrum
+    development ide:vscode/atom
+    version control system:git/github
+    others:mention libraries 
+
+Projects-
+    project title:
+    techs used:
+    description:
+    Roles and responsibilities:
+
+Personal Details-
+    fullname:
+    gender:
+    current address:
+    permenant address:
+
+
+FOR MAKING THE RESUME ATS FRIENDLY
+
+    1. add some keywords in your resume which alingn with the job description

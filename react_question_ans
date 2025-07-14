@@ -1,0 +1,684 @@
+### React Interview Questions and Answers
+
+---
+
+#### **1. What is React?**
+React is a JavaScript library for building user interfaces, particularly single-page applications (SPAs). It uses a component-based architecture to create reusable UI components and efficiently updates and renders them with its virtual DOM.
+
+---
+
+#### **2. What is `useMemo`?**
+`useMemo` is a React Hook that memoizes a value, ensuring it is recomputed only when its dependencies change. It optimizes performance by preventing expensive computations on every render.
+
+**Syntax:**
+```jsx
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+```
+
+---
+
+#### **3. What are the features of React?**
+- **Component-Based Architecture:** Builds UIs with reusable components.
+- **Virtual DOM:** Efficiently updates and renders UI changes.
+- **One-Way Data Binding:** Data flows from parent to child components.
+- **JSX:** Syntax extension for writing HTML-like code in JavaScript.
+- **Declarative:** Developers describe what UI should look like, and React handles updates.
+- **Hooks:** Enables functional components to manage state and lifecycle.
+- **Cross-Platform Development:** React Native enables mobile app development.
+
+---
+
+#### **4. What is JSX?**
+JSX (JavaScript XML) is a syntax extension for JavaScript that allows writing HTML-like code in JavaScript. It makes it easier to create and structure React components.
+
+**Example:**
+```jsx
+const element = <h1>Hello, World!</h1>;
+```
+
+---
+
+#### **5. What is DOM?**
+The DOM (Document Object Model) is a programming interface for web documents. It represents the structure of an HTML document as a tree of nodes, enabling scripts to interact with and modify the document's content and structure.
+
+---
+
+#### **6. What is Virtual DOM?**
+The Virtual DOM is a lightweight, in-memory representation of the real DOM. React updates the Virtual DOM first, calculates the difference (diffing), and then updates only the changed parts in the real DOM.
+
+---
+
+#### **7. What is the component lifecycle of a React class component?**
+React class components have the following lifecycle methods:
+1. **Mounting:** `constructor`, `getDerivedStateFromProps`, `render`, `componentDidMount`.
+2. **Updating:** `getDerivedStateFromProps`, `shouldComponentUpdate`, `render`, `getSnapshotBeforeUpdate`, `componentDidUpdate`.
+3. **Unmounting:** `componentWillUnmount`.
+
+---
+
+#### **8. What are fragments in React?**
+Fragments allow grouping multiple elements without adding an extra DOM node.
+
+**Example:**
+```jsx
+<React.Fragment>
+  <h1>Title</h1>
+  <p>Paragraph</p>
+</React.Fragment>
+```
+
+---
+
+#### **9. What are props in React?**
+Props (short for "properties") are immutable inputs passed from a parent to a child component. They allow data to flow between components.
+
+**Example:**
+```jsx
+<MyComponent name="Vikas" />
+```
+
+---
+
+#### **10. What are synthetic events in React?**
+Synthetic events are React's cross-browser wrapper around native browser events. They provide consistent behavior across different browsers.
+
+---
+
+#### **11. Differences between `package.json` and `package-lock.json`:**
+- **`package.json`:** Lists project dependencies and scripts.
+- **`package-lock.json`:** Records exact dependency versions installed, ensuring consistency.
+
+---
+
+#### **12. Differences between client-side and server-side rendering:**
+| Feature            | Client-Side Rendering (CSR) | Server-Side Rendering (SSR) |
+|--------------------|-----------------------------|-----------------------------|
+| Rendering Location | Browser                     | Server                      |
+| Initial Load Time  | Slower                      | Faster                      |
+| SEO                | Poor                        | Good                        |
+
+---
+
+#### **13. What is state in React?**
+State is a mutable object that stores dynamic data in a component, determining its behavior and rendering.
+
+**Example:**
+```jsx
+const [count, setCount] = useState(0);
+```
+
+---
+
+#### **14. What are props?**
+See **9.**
+
+---
+
+#### **15. Differences between State and Props:**
+| Feature      | Props                      | State                     |
+|--------------|----------------------------|---------------------------|
+| Mutability   | Immutable                  | Mutable                   |
+| Managed By   | Parent component           | Component itself          |
+
+---
+
+#### **16. What is props drilling?**
+Props drilling occurs when props are passed down multiple levels of the component tree, even if intermediate components don't use them.
+
+---
+
+#### **17. Disadvantages of props drilling and solutions:**
+- **Disadvantages:** Code becomes hard to maintain.
+- **Solution:** Use **Context API** or **Redux**.
+
+---
+
+#### **18. What are Pure Components in React?**
+A pure component only re-renders when its props or state changes, offering performance optimization.
+
+---
+
+#### **19. What are refs in React?**
+Refs provide access to DOM elements or React components.
+
+**Example:**
+```jsx
+const ref = useRef();
+```
+
+---
+
+#### **20. What is forward ref?**
+Forward ref enables passing a ref from a parent to a child component.
+
+---
+
+#### **21. What are Error Boundaries?**
+Error boundaries catch JavaScript errors in their child components and render a fallback UI.
+
+---
+
+#### **22. What are Higher Order Components (HOCs)?**
+HOCs are functions that take a component and return a new component with added functionality.
+
+**Example:**
+```javascript
+const withLogger = (WrappedComponent) => {
+  return (props) => {
+    console.log('Rendering');
+    return <WrappedComponent {...props} />;
+  };
+};
+```
+
+---
+
+#### **23. Differences between controlled and uncontrolled components:**
+| Feature          | Controlled Component          | Uncontrolled Component |
+|------------------|-------------------------------|------------------------|
+| Data Source      | React State                   | DOM                    |
+
+---
+
+---
+
+#### **24. What is `useCallback`?**
+`useCallback` is a React Hook that memoizes a callback function, ensuring it is recreated only when its dependencies change. This is useful for optimizing child components that rely on function props.
+
+**Syntax:**
+```jsx
+const memoizedCallback = useCallback(() => doSomething(a, b), [a, b]);
+```
+
+---
+
+#### **25. Differences between `useMemo` and `useCallback`:**
+| Feature        | `useMemo`                       | `useCallback`                  |
+|----------------|----------------------------------|---------------------------------|
+| Purpose        | Memoizes a value or computation | Memoizes a function            |
+| Return Value   | Computed value                  | Memoized callback function     |
+| Use Case       | Expensive calculations          | Passing stable callbacks       |
+
+---
+
+#### **26. What are keys in React?**
+Keys are unique identifiers used in lists to help React identify and manage changes to DOM elements efficiently.
+
+**Example:**
+```jsx
+{items.map(item => <li key={item.id}>{item.name}</li>)}
+```
+
+---
+
+#### **27. What is lazy loading in React?**
+Lazy loading is a technique to load components or resources only when they are needed, improving initial load time.
+
+**Example:**
+```jsx
+const LazyComponent = React.lazy(() => import('./MyComponent'));
+```
+
+---
+
+#### **28. What is suspense in React?**
+`Suspense` is a component that lets you display a fallback UI while waiting for a resource (like lazy-loaded components) to load.
+
+**Example:**
+```jsx
+<Suspense fallback={<div>Loading...</div>}>
+  <LazyComponent />
+</Suspense>
+```
+
+---
+
+#### **29. What are custom hooks?**
+Custom hooks are user-defined functions that allow sharing reusable logic between components.
+
+**Example:**
+```jsx
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+  const increment = () => setCount(count + 1);
+  return { count, increment };
+}
+```
+
+---
+
+#### **30. What is the `useReducer` hook?**
+`useReducer` is a React Hook for managing state logic in complex state scenarios.
+
+**Syntax:**
+```jsx
+const [state, dispatch] = useReducer(reducer, initialState);
+```
+
+**Example:**
+```jsx
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    default:
+      return state;
+  }
+}
+```
+
+---
+
+#### **31. What are portals in React?**
+Portals allow rendering a child component into a different part of the DOM tree, outside its parent.
+
+**Example:**
+```jsx
+ReactDOM.createPortal(<Child />, document.getElementById('portal-root'));
+```
+
+---
+
+#### **32. What is context in React?**
+The Context API provides a way to share state or data globally without passing props manually down the component tree.
+
+---
+
+#### **33. Practical: Example of Context API usage**
+```jsx
+const ThemeContext = React.createContext('light');
+
+function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Toolbar />
+    </ThemeContext.Provider>
+  );
+}
+
+function Toolbar() {
+  const theme = useContext(ThemeContext);
+  return <div className={theme}>Toolbar</div>;
+}
+```
+
+---
+
+#### **34. Purpose of a callback function in `setState`:**
+The callback function in `setState` ensures code execution after state updates are applied.
+
+**Example:**
+```jsx
+this.setState({ count: this.state.count + 1 }, () => {
+  console.log('State updated:', this.state.count);
+});
+```
+
+---
+
+#### **35. Practical: Custom hook for increment/decrement counter**
+```jsx
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  return { count, increment, decrement };
+}
+```
+
+---
+
+#### **36. Lifecycle hooks in class components replaced by `useEffect`:**
+| Class Lifecycle Methods      | Equivalent in `useEffect`        |
+|------------------------------|----------------------------------|
+| `componentDidMount`          | `useEffect(() => {}, [])`       |
+| `componentDidUpdate`         | `useEffect(() => { ... }, [dep])`|
+| `componentWillUnmount`       | Cleanup in `useEffect`          |
+
+---
+
+#### **37. What is Strict Mode in React?**
+`StrictMode` is a React component that identifies potential problems by activating additional checks and warnings in development mode.
+
+---
+
+#### **38. Ways to pass data from child to parent in React:**
+- Using callback functions.
+- Using `useRef`.
+
+---
+
+#### **39. Practical: Sending data from child to parent using callback:**
+```jsx
+function Parent() {
+  const handleData = (data) => console.log(data);
+  return <Child onData={handleData} />;
+}
+
+function Child({ onData }) {
+  return <button onClick={() => onData('Hello Parent!')}>Send Data</button>;
+}
+```
+
+---
+---
+
+#### **40. Practical: How to send data from child component to parent using `useRef`?**
+You can use `useRef` in the parent component to access methods or data from the child.
+
+**Example:**
+```jsx
+function Parent() {
+  const childRef = useRef();
+
+  const handleClick = () => {
+    console.log(childRef.current.getData());
+  };
+
+  return (
+    <>
+      <Child ref={childRef} />
+      <button onClick={handleClick}>Get Data from Child</button>
+    </>
+  );
+}
+
+const Child = React.forwardRef((props, ref) => {
+  const getData = () => 'Hello from Child';
+
+  React.useImperativeHandle(ref, () => ({ getData }));
+
+  return <div>Child Component</div>;
+});
+```
+
+---
+
+#### **41. How do you optimize your React application?**
+1. **Use React.memo** for memoizing functional components.
+2. **Use `useCallback` and `useMemo`** to prevent unnecessary renders.
+3. **Code splitting and lazy loading** using `React.lazy`.
+4. **Avoid anonymous functions in render.**
+5. **Optimize images** and use CDNs.
+6. **Use production build** with minification.
+
+---
+
+#### **42. How would you consume a RESTful JSON API in React?**
+Using `fetch` or libraries like `axios` inside `useEffect`.
+
+**Example with Fetch:**
+```jsx
+function App() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('https://api.example.com/data')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
+
+  return <div>{JSON.stringify(data)}</div>;
+}
+```
+
+---
+
+#### **43. Different design patterns used in React:**
+1. **Container-Presentational Pattern**
+2. **Higher-Order Components (HOC)**
+3. **Render Props Pattern**
+4. **Compound Components**
+5. **Custom Hooks**
+
+---
+
+#### **44. Context API vs Redux:**
+| Feature             | Context API                    | Redux                          |
+|---------------------|--------------------------------|--------------------------------|
+| Purpose             | Sharing global state          | State management library      |
+| Complexity          | Simple                        | Complex setup                 |
+| Scalability         | Limited for large applications| Suitable for large apps       |
+
+---
+
+#### **45. PropTypes in React:**
+PropTypes allow type checking for props to ensure components receive valid props.
+
+**Example:**
+```jsx
+import PropTypes from 'prop-types';
+
+function MyComponent({ name, age }) {
+  return <div>{name} is {age} years old.</div>;
+}
+
+MyComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number.isRequired,
+};
+```
+
+---
+
+#### **46. What are React Mixins?**
+Mixins were used to share functionality across components but are now deprecated in favor of HOCs and hooks.
+
+---
+
+#### **47. What are the different hooks you have used?**
+1. **useState**
+2. **useEffect**
+3. **useContext**
+4. **useReducer**
+5. **useRef**
+6. **useCallback**
+7. **useMemo**
+8. **useImperativeHandle**
+9. **useLayoutEffect**
+
+---
+
+#### **48. What are render props in React?**
+Render props is a pattern where a component's children is a function that returns JSX.
+
+**Example:**
+```jsx
+function DataProvider({ children }) {
+  const data = { name: 'React' };
+  return children(data);
+}
+
+<DataProvider>
+  {(data) => <div>{data.name}</div>}
+</DataProvider>
+```
+
+---
+
+#### **49. Different types of exports and imports:**
+1. **Default Export and Import:**
+   ```jsx
+   export default MyComponent;
+   import MyComponent from './MyComponent';
+   ```
+2. **Named Export and Import:**
+   ```jsx
+   export const myFunc = () => {};
+   import { myFunc } from './myModule';
+   ```
+
+---
+
+#### **50. Differences between `createElement` and `cloneElement`:**
+| Feature           | `React.createElement`             | `React.cloneElement`            |
+|-------------------|-----------------------------------|----------------------------------|
+| Purpose           | Create new elements              | Clone and modify existing ones  |
+| Parameters        | Type, props, children            | Existing element, new props     |
+
+---
+
+## 43. Different design patterns used in React
+
+- **Container/Presentational Pattern**: This separates the concerns by dividing the UI into container components (stateful) and presentational components (stateless).
+- **Higher-Order Components (HOC)**: Reusable component logic is abstracted and shared by wrapping a component with another component.
+- **Render Props**: A technique where a component shares its state with other components by passing a function as a prop.
+- **Compound Components**: A pattern where multiple components work together to manage state, and child components communicate using context.
+- **Provider Pattern**: Used with React Context API to pass down state through the component tree without prop-drilling.
+- **Observer Pattern**: Components can subscribe to changes in data and update accordingly.
+
+---
+
+## 44. Context API vs Redux
+
+- **Context API**:
+  - Built-in solution provided by React.
+  - Ideal for low-complexity state management.
+  - Best suited for passing down global states like themes or user authentication.
+  - Doesn't require third-party libraries.
+  
+- **Redux**:
+  - External library for state management.
+  - Used for managing complex state with actions, reducers, and a central store.
+  - Works well for large applications with heavy state logic and frequent updates.
+  - Offers middleware like redux-thunk or redux-saga for side effects.
+
+  ---
+
+## 45. Prop types in React (How to apply validation on props in React)
+
+- **PropTypes** is a package that helps validate the props being passed to a component. To use it:
+  ```javascript
+  import PropTypes from 'prop-types';
+
+  const MyComponent = ({ name, age }) => {
+    return <div>{name} is {age} years old.</div>;
+  };
+
+  MyComponent.propTypes = {
+    name: PropTypes.string.isRequired,
+    age: PropTypes.number
+  };
+  ```
+
+  ---
+
+## 46. What are React Mixins?
+
+- Mixins are a way to reuse component logic across multiple components. React had mixins in earlier versions, but they were deprecated due to issues with maintainability and conflicts. Instead, it's recommended to use HOCs or custom hooks.
+
+---
+
+## 47. What are the different hooks you have used?
+
+- **useState**: To manage local state in functional components.
+- **useEffect**: For side effects like fetching data, subscriptions, or manual DOM manipulations.
+- **useContext**: To access and manage global state using React's Context API.
+- **useReducer**: For complex state logic, often replacing useState.
+- **useMemo**: To memoize values and prevent unnecessary re-renders.
+- **useCallback**: To memoize functions and prevent re-creation of the function on each render.
+- **useRef**: To persist values across renders and access DOM elements directly.
+- **useLayoutEffect**: Similar to useEffect, but fires synchronously after the DOM has been painted.
+
+---
+
+## 48. What are Render Props in React?
+
+- Render props is a pattern where a component shares its internal state by passing a function (a render prop) to its child component, which returns JSX. This allows for code reuse across components.
+  
+  Example:
+  ```javascript
+  const MouseTracker = ({ render }) => {
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+      setPosition({ x: e.clientX, y: e.clientY });
+    };
+
+    return <div onMouseMove={handleMouseMove}>{render(position)}</div>;
+  };
+
+  <MouseTracker render={(position) => <h1>Mouse position: {position.x}, {position.y}</h1>} />;
+  ```
+
+  ---
+
+## 49. What are the different types of exports and imports?
+
+- **Named Exports**: Exporting individual components or functions.
+  ```javascript
+  export const MyComponent = () => {};
+  export function myFunction() {};
+  ```
+
+- **Default Exports**: Exporting a single value (function, class, etc.).
+  ```javascript
+  export default MyComponent;
+  ```
+
+- **Imports**:
+  ```javascript
+  import { MyComponent } from './MyComponent'; // Named import
+  import MyComponent from './MyComponent'; // Default import
+  ```
+
+  ---
+
+## 50. What are the differences between createElement vs cloneElement in React?
+
+- **createElement**: Used to create a new React element or component. It is commonly used under the hood by JSX.
+  ```javascript
+  React.createElement('div', null, 'Hello World');
+  ```
+
+- **cloneElement**: Used to clone an existing React element and add additional props to it.
+  ```javascript
+  const element = <div>Hello</div>;
+  const clonedElement = React.cloneElement(element, { className: 'new-class' });
+  ```
+
+  ---
+
+## 51. When to use useState and useReducer?
+
+- **useState**: Best for simple state management in functional components, where state updates are independent.
+- **useReducer**: Ideal for managing more complex state logic or when the state updates depend on previous state values, often used in cases where multiple sub-values are managed.
+
+---
+
+## 52. What is flushSync in React?
+
+- `flushSync` is a React API that allows you to synchronously flush pending updates to the DOM. It can be useful in certain cases, like when you want to make sure an update is immediately reflected in the DOM before a callback or side effect.
+
+  Example:
+  ```javascript
+  import { flushSync } from 'react-dom';
+
+  flushSync(() => {
+    setState(newState);
+  });
+  ```
+
+  ---
+
+## 53. What are Protected Routes in React?
+
+- Protected routes are a way to restrict access to certain parts of your app based on the user's authentication or authorization status. You can achieve this by using React Router and checking the authentication state before rendering the component.
+  
+  Example:
+  ```javascript
+  const ProtectedRoute = ({ component: Component, ...rest }) => {
+    const isAuthenticated = useAuth();
+
+    return (
+      <Route
+        {...rest}
+        render={props =>
+          isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
+        }
+      />
+    );
+  };
+  ```
+
+---

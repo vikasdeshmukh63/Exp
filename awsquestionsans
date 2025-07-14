@@ -1,0 +1,42 @@
+# AWS Interview Questions and Answers
+
+## Basic AWS Questions
+
+### 1. What is AWS?
+AWS (Amazon Web Services) is a cloud computing platform that provides a wide range of services such as computing power, storage, databases, and networking on a pay-as-you-go basis.
+
+### 2. What are the core services of AWS?
+- **Compute**: EC2, Lambda  
+- **Storage**: S3, EBS  
+- **Database**: RDS, DynamoDB  
+- **Networking**: VPC, Route 53  
+- **Security**: IAM, KMS  
+
+### 3. What is EC2 in AWS?
+EC2 (Elastic Compute Cloud) provides scalable virtual servers in the cloud, allowing users to run applications without maintaining physical servers.
+
+### 4. What is an IAM role?
+IAM roles are used to grant temporary permissions to users, applications, or AWS services without sharing credentials.
+
+### 5. What is Auto Scaling?
+Auto Scaling automatically adjusts the number of EC2 instances based on demand to ensure optimal performance and cost efficiency.
+
+## Advanced AWS Questions
+
+### 6. How does AWS Lambda work?
+AWS Lambda is a serverless computing service that runs code in response to events without provisioning or managing servers.
+
+### 7. What is the difference between S3 Standard and S3 Glacier?
+- **S3 Standard**: Used for frequently accessed data with low latency.  
+- **S3 Glacier**: Used for long-term storage and archiving with retrieval times from minutes to hours.  
+
+### 8. How does AWS VPC work?
+A Virtual Private Cloud (VPC) allows users to create isolated networks in AWS with custom IP ranges, subnets, and security settings.
+
+### 9. What is the difference between Security Groups and NACLs?
+- **Security Groups**: Act as firewalls for EC2 instances, controlling inbound and outbound traffic.  
+- **NACLs (Network ACLs)**: Operate at the subnet level, controlling traffic for multiple instances.  
+
+### 10. What is the difference between AWS CloudFormation and Terraform?
+- **CloudFormation**: AWS-native Infrastructure as Code (IaC) tool.  
+- **Terraform**: Multi-cloud IaC tool that supports AWS, Azure, and GCP.
